@@ -12,6 +12,10 @@ description = "t:description"
   input_query = "src/cart_lines_discounts_generate_run.graphql"
   export = "cart_lines_discounts_generate_run"
 
+  [extensions.input.variables]
+  namespace = "$app"
+  key = "offer_input"
+
   [extensions.build]
   command = "cargo build --target=wasm32-unknown-unknown --release"
   path = "target/wasm32-unknown-unknown/release/offer-discount.wasm"

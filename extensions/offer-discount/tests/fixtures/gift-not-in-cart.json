@@ -10,12 +10,20 @@
             "cost": { "subtotalAmount": { "amount": "250.00" } },
             "merchandise": {
               "__typename": "ProductVariant",
-              "product": { "id": "gid://shopify/Product/999" }
+              "id": "gid://shopify/ProductVariant/999"
             }
           }
         ]
       },
-      "discount": { "discountClasses": ["PRODUCT"] }
+      "discount": {
+        "discountClasses": ["PRODUCT"]
+      },
+      "shop": {
+        "offer": {
+          "variant": { "value": "gid://shopify/ProductVariant/44444" },
+          "minimumCartValue": { "value": "200.0" }
+        }
+      }
     },
     "output": { "operations": [] }
   }

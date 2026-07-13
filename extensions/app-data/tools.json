@@ -1,0 +1,46 @@
+[
+  {
+    "$schema": "https://extensions.shopifycdn.com/shopifycloud/schemas/v1/tool.json",
+    "name": "list_offers",
+    "description": "List the merchant's current \"Spend X, Get Y Free\" offers. Each offer gives away a gift product once the cart subtotal reaches a minimum value.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "offers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the offer"
+              },
+              "title": {
+                "type": "string",
+                "description": "Merchant-facing name of the offer"
+              },
+              "giftProductTitle": {
+                "type": "string",
+                "description": "Title of the product given away for free"
+              },
+              "giftVariantTitle": {
+                "type": "string",
+                "description": "Title of the specific gift variant, if any"
+              },
+              "minimumSubtotal": {
+                "type": "string",
+                "description": "Minimum cart subtotal required to unlock the free gift"
+              }
+            },
+            "required": ["id", "title"]
+          }
+        }
+      }
+    }
+  }
+]

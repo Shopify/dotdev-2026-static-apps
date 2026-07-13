@@ -26,6 +26,7 @@ export default function OfferPage({ id }) {
         return;
       }
 
+      shopify.loading(true)
       setError(null);
       setFieldErrors({});
 
@@ -38,6 +39,8 @@ export default function OfferPage({ id }) {
       } finally {
         setStatus('idle');
       }
+
+      shopify.loading(false);
     }
 
     loadOffer();
@@ -115,6 +118,8 @@ export default function OfferPage({ id }) {
     if (isNew) {
       location.route('/');
     }
+
+    shopify.toast.show(isNew ? 'Offer created' : 'Offer updated');
   };
 
   const handleSave = (event) => {
@@ -128,6 +133,7 @@ export default function OfferPage({ id }) {
 
   const handleDelete = async () => {
     setStatus('deleting');
+    shopify.loading(true)
 
     try {
       await deleteOffer(id);
@@ -138,6 +144,7 @@ export default function OfferPage({ id }) {
     }
 
     location.route('/');
+    shopify.loading(false);
   };
 
   const isLoading = status === 'loading';

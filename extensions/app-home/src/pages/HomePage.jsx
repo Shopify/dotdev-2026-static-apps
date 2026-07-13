@@ -6,7 +6,11 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchOffers().then(setOffers).finally(() => setLoading(false));
+    shopify.loading(true)
+    fetchOffers().then(setOffers).finally(() => {
+      setLoading(false);
+      shopify.loading(false);
+    });
   }, []);
 
   return (

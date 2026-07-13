@@ -15,6 +15,14 @@
           },
           {
             "id": "gid://shopify/CartLine/1",
+            "cost": { "subtotalAmount": { "amount": "10.00" } },
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/44444"
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/2",
             "cost": { "subtotalAmount": { "amount": "250.00" } },
             "merchandise": {
               "__typename": "ProductVariant",

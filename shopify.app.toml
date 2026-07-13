@@ -1,23 +1,50 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 client_id = ""
-name = "Spend X, Get Y Free (Main)"
+name = "Spend X, Get Y Free (End)"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-include_config_on_deploy = true
 
 [webhooks]
 api_version = "2026-10"
 
-[access.admin]
-direct_api_mode = "online"
-embedded_app_direct_api_access = true
-
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_products,write_discounts"
+scopes = "write_discounts,write_metaobject_definitions,write_metaobjects,read_products"
 
 [auth]
 redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+
+# Offer metaobject
+# Accessible to merchants and the storefront
+[metaobjects.app.offer]
+name = "Offer"
+display_name_field = "title"
+access.admin = "merchant_read_write"
+access.storefront = "public_read"
+capabilities.publishable = true
+
+[metaobjects.app.offer.fields.title]
+name = "Title"
+type = "single_line_text_field"
+required = true
+
+[metaobjects.app.offer.fields.minimum_cart_value]
+name = "Minimum Cart Value"
+type = "number_decimal"
+
+[metaobjects.app.offer.fields.variant]
+name = "Variant"
+type = "variant_reference"
+
+# Discount metafield holds only the offer id (json)
+# Allows the discount function to query the offer metaobject.
+[discount.metafields.app.offer_input]
+name = "Offer input"
+type = "json"
+access.admin = "merchant_read_write"
+
+[sidekick]
+extensions_summary = "Search for 'Spend X, get Y offers'"

@@ -1,4 +1,4 @@
-query Input {
+query Input($offerId: ID!) {
   cart {
     lines {
       id
@@ -10,14 +10,22 @@ query Input {
       merchandise {
         __typename
         ... on ProductVariant {
-          product {
-            id
-          }
+          id
         }
       }
     }
   }
   discount {
     discountClasses
+  }
+  shop {
+    offer: metaobject(id: $offerId) {
+      variant: field(key: "variant") {
+        value
+      }
+      minimumCartValue: field(key: "minimum_cart_value") {
+        value
+      }
+    }
   }
 }
