@@ -1,0 +1,26 @@
+mutation CreateStarterDiscount {
+  discountAutomaticAppCreate(
+    automaticAppDiscount: {
+      title: "Spend over $200, get a free gift"
+      functionHandle: "offer-discount"
+      discountClasses: [PRODUCT]
+      startsAt: "2026-01-01T00:00:00Z"
+      combinesWith: {
+        productDiscounts: true
+        orderDiscounts: false
+        shippingDiscounts: false
+      }
+    }
+  ) {
+    automaticAppDiscount {
+      discountId
+      title
+      status
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}

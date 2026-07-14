@@ -1,0 +1,22 @@
+{
+  "payload": {
+    "export": "cart_lines_discounts_generate_run",
+    "target": "cart.lines.discounts.generate.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/0",
+            "cost": { "subtotalAmount": { "amount": "250.00" } },
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "product": { "id": "gid://shopify/Product/999" }
+            }
+          }
+        ]
+      },
+      "discount": { "discountClasses": ["PRODUCT"] }
+    },
+    "output": { "operations": [] }
+  }
+}

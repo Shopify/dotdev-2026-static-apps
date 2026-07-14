@@ -1,0 +1,4 @@
+{
+  "name": "Offer discount",
+  "description": "Makes the offer product free when the cart subtotal meets the offer's minimum cart price."
+}

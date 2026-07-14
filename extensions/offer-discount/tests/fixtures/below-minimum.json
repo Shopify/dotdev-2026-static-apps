@@ -1,0 +1,30 @@
+{
+  "payload": {
+    "export": "cart_lines_discounts_generate_run",
+    "target": "cart.lines.discounts.generate.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/0",
+            "cost": { "subtotalAmount": { "amount": "199.99" } },
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "product": { "id": "gid://shopify/Product/999" }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/1",
+            "cost": { "subtotalAmount": { "amount": "10.00" } },
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "product": { "id": "gid://shopify/Product/8177147543605" }
+            }
+          }
+        ]
+      },
+      "discount": { "discountClasses": ["PRODUCT"] }
+    },
+    "output": { "operations": [] }
+  }
+}

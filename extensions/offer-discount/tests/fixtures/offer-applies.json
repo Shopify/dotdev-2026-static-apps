@@ -1,0 +1,54 @@
+{
+  "payload": {
+    "export": "cart_lines_discounts_generate_run",
+    "target": "cart.lines.discounts.generate.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/0",
+            "cost": { "subtotalAmount": { "amount": "10.00" } },
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "product": { "id": "gid://shopify/Product/8177147543605" }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/1",
+            "cost": { "subtotalAmount": { "amount": "250.00" } },
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "product": { "id": "gid://shopify/Product/999" }
+            }
+          }
+        ]
+      },
+      "discount": { "discountClasses": ["PRODUCT"] }
+    },
+    "output": {
+      "operations": [
+        {
+          "productDiscountsAdd": {
+            "selectionStrategy": "ALL",
+            "candidates": [
+              {
+                "targets": [
+                  {
+                    "cartLine": {
+                      "id": "gid://shopify/CartLine/0",
+                      "quantity": 1
+                    }
+                  }
+                ],
+                "message": "Offer applied: this product is free!",
+                "value": {
+                  "percentage": { "value": "100.0" }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
