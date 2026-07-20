@@ -1,6 +1,6 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 client_id = ""
-name = "Spend X, Get Y Free (Main)"
+name = "Spend X, Get Y Free (Demo)"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
 
