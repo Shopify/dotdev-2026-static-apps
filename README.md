@@ -46,21 +46,27 @@ Expect to need:
 
 ## Getting started
 
-Use the Shopify CLI to start a new app using the start branch in this repo:
+Checkout the repo:
 
 ```bash
-shopify app init --template=https://github.com/Shopify/dotdev-2026-static-apps#start
+git clone https://github.com/Shopify/dotdev-2026-static-apps.git
 ```
 
-Note: `#start` on the end of this command will create the app using the start branch. Don't miss this. You need to use the start branch in the workshop.
-
-Change directory into the directory that was just created, then run:
+Change into the project folder, then install dependencies:
 
 ```bash
-pnpm shopify app dev --use-localhost
+pnpm install
 ```
 
-Press P in the CLI window to open a preview link. Install the app.
+Now start the app:
+
+```bash
+shopify app dev --reset --use-localhost
+```
+
+After selecting an org and demo store press P and once the dev preview is ready to open a preview link.
+
+Install the app.
 
 ## Workshop
 
