@@ -187,17 +187,3 @@ Important points:
 ## The complete app
 
 The [end branch](https://github.com/Shopify/dotdev-2026-static-apps/tree/end) has the complete app.
-
------
-
-## Running the main branch
-
-Do not use the main branch in the workshop. It's for the instructor to demo. If you do use the main branch, you'll need this command:
-
-```bash
-pnpm shopify app execute \
-  --version 2026-04 \
-  --query-file create-discount.graphql
-```
-
-This creates an active automatic discount that invokes the `offer-discount` Function. Run it only once per store; each execution creates another discount.
