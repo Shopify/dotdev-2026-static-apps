@@ -186,4 +186,4 @@ Important points:
 
 ## The complete app
 
-The [end branch](https://github.com/Shopify/dotdev-2026-static-apps/tree/end) has the complete app.
+The [complete-app branch](https://github.com/Shopify/dotdev-2026-static-apps/tree/complete-app) has the complete app.
